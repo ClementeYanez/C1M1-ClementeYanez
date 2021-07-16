@@ -47,43 +47,58 @@ void main() {
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
 
+
+
 }
 
 
 
 
- void print_statistics(int * int_ptr_to_StatDataArr, int int_size_of_array)
- {
+void print_statistics(u_8Bit * u_cptr_to_DataArr, int u_isize_of_array);
+{
    // Print Array of statistics with size SIZE 
 
- }
+}
 
 
- void print_array(int * int_ptr_to_DataArr)
- {
+void print_array( u_8Bit * u_cptr_to_DataArr,int u_isize_of_array)
+{
    // Print Array of Data with size SIZE 
 
- }
+}
 
 
-/******************************************************************************
- * Function name: find_median
- * Description:
- *      
- *       Given an array of data and a length, prints the array to the screen.
- *
- *  Parameters:
- *    
- *       int * int_ptr_to_DataArr = Pointer to Data Array.
- *
- *  Returns:
- *
- *
- *
- *******************************************************************************/
 
- void find_median(int * int_ptr_to_DataArr, int int_size_of_array)
- {
+u_8Bit find_median(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
+{
    // code to find the median
 
- }
+}
+
+
+u_8Bit find_mean(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
+{
+   //Code to find the mean
+
+}
+
+
+u_8Bit find_maximum(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
+{
+  //code to find the max value
+
+}
+
+
+u_8Bit find_minimum(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
+{
+  //code to find the min value
+
+}
+
+
+void sort_array(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
+{
+  // code to sort the array
+
+}

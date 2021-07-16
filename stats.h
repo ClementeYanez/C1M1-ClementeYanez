@@ -39,7 +39,7 @@ typedef unsigned char u_8Bit;
 
 
 
-/**     print_statistics ********************************************************
+/**  
  * 
  * @brief A function that calculates and prints the statistics of an array 
  *      
@@ -67,7 +67,7 @@ typedef unsigned char u_8Bit;
  * 
  *
  * @param <u_8Bit * u_cptr_to_DataArr>  <Pointer to Data Array.>
- * @param <int   u_isize_of_array >  <1D array dimension.   >
+ * @param <int   u_isize_of_array    >  <1D array dimension.   >
  *
  * @return <None>
  */
@@ -77,45 +77,78 @@ typedef unsigned char u_8Bit;
 
 
  /**
- * @brief <Add Brief Description of Function Here>
+ * @brief Given an array of data and a length, return the median.
  *
- * <Add Extended Description Here>
+ *    This function takes as an input an array pointer and returns the
+ *      median in a char.
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param <u_8Bit * u_cptr_to_DataArr>  <Pointer to Data Array.>
+ * @param <int   u_isize_of_array    >  <1D array dimension.   >
  *
- * @return <Add Return Informaiton here>
+ * @return <Returns a char variable with the median>
  */
- void find_median(int * int_ptr_to_DataArr, int int_size_of_array);
+ u_8Bit find_median(u_8Bit * u_cptr_to_DataArr, int u_isize_of_array);
 
+
+
+ /**
+ * @brief Given an array of data and a length, returns the mean
+ *
+ *    This function takes as an input an array pointer and returns the
+ *      meam in a char.
+ *
+ * @param <u_8Bit * u_cptr_to_DataArr>  <Pointer to Data Array.>
+ * @param <int   u_isize_of_array    >  <1D array dimension.   >
+ *
+ * @return <Returns a char variable with the mean>
+ */
+
+ u_8Bit find_mean(u_8Bit * u_cptr_to_DataArr, int int_size_of_array);
 
 
  /**
  * @brief <Add Brief Description of Function Here>
  *
- * <Add Extended Description Here>
+ *    This function takes as an input an array pointer and returns the
+ *      maximum value in a char.
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param <u_8Bit * u_cptr_to_DataArr>  <Pointer to Data Array.>
+ * @param <int   u_isize_of_array    >  <1D array dimension.   >
  *
- * @return <Add Return Informaiton here>
+ * @return <Returns a char variable with the Macimum value>
  */
 
- /**
+ u_8Bit find_maximum(u_8Bit * u_cptr_to_DataArr, int int_size_of_array);
+
+
+/**
  * @brief <Add Brief Description of Function Here>
  *
- * <Add Extended Description Here>
+ *    This function takes as an input an array pointer and returns the
+ *      minimum value in a char.
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param <u_8Bit * u_cptr_to_DataArr>  <Pointer to Data Array.>
+ * @param <int   u_isize_of_array    >  <1D array dimension.   >
  *
- * @return <Add Return Informaiton here>
+ * @return <Returns a char variable with the minimum value>
  */
+
+ u_8Bit find_minimum(u_8Bit * u_cptr_to_DataArr, int int_size_of_array);
+
+/**
+ * @brief Given an array of data and a length, sorts the array from largest to smallest. 
+ *
+ *    This function takes as an input an array pointer and sorts it, The zeroth 
+ *      Element should be the largest value, and the last element (n-1) should 
+ *      be the smallest value.
+ *
+ *
+ * @param <u_8Bit * u_cptr_to_DataArr>  <Pointer to Data Array.>
+ * @param <int   u_isize_of_array    >  <1D array dimension.   >
+ *
+ * @return <None>
+ */
+
+ void sort_array(u_8Bit * u_cptr_to_DataArr, int int_size_of_array);
 
 #endif /* __STATS_H__ */
