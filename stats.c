@@ -54,7 +54,7 @@ void main() {
 
 
 
-void print_statistics(u_8Bit * u_cptr_to_DataArr, int u_isize_of_array);
+void print_statistics(u_8Bit * u_cptr_to_DataArr, int u_isize_of_array)
 {
    // Print Array of statistics with size SIZE 
 
@@ -72,6 +72,7 @@ void print_array( u_8Bit * u_cptr_to_DataArr,int u_isize_of_array)
 u_8Bit find_median(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
 {
    // code to find the median
+   return 0;
 
 }
 
@@ -79,21 +80,21 @@ u_8Bit find_median(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
 u_8Bit find_mean(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
 {
    //Code to find the mean
-
+   return 0;
 }
 
 
 u_8Bit find_maximum(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
 {
   //code to find the max value
-
+   return 0;
 }
 
 
 u_8Bit find_minimum(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
 {
   //code to find the min value
-
+   return 0;
 }
 
 

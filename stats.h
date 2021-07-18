@@ -72,7 +72,7 @@ typedef unsigned char u_8Bit;
  * @return <None>
  */
 
- void print_array( u_8Bit * u_cptr_to_DataArr,int u_isize_of_array)
+ void print_array( u_8Bit * u_cptr_to_DataArr,int u_isize_of_array);
 
 
 
