@@ -30,7 +30,7 @@ typedef unsigned char u_8Bit;
 
 
 
-/************************MACROS***********************************************/
+/************************ MACROS***********************************************/
 
 
 
@@ -64,7 +64,9 @@ typedef unsigned char u_8Bit;
  * 
  * @brief  Given an array of data and a length, function prints the array.
  *      
- * 
+ *      This function prints "Data array" title followed by the data arranged
+ *        in a 10 columns j rows manner, where n is calculated depending on
+ *        the data size. 
  *
  * @param <u_8Bit * u_cptr_to_DataArr>  <Pointer to Data Array.>
  * @param <int   u_isize_of_array    >  <1D array dimension.   >
@@ -141,7 +143,8 @@ typedef unsigned char u_8Bit;
  *    This function takes as an input an array pointer and sorts it, The zeroth 
  *      Element should be the largest value, and the last element (n-1) should 
  *      be the smallest value.
- *
+ *    Algorithm used to sort this array is bubble sorting due to its low complexity
+ *      at the time of implementation.
  *
  * @param <u_8Bit * u_cptr_to_DataArr>  <Pointer to Data Array.>
  * @param <int   u_isize_of_array    >  <1D array dimension.   >

@@ -27,10 +27,13 @@
 
 #include <stdio.h>
 #include "stats.h"
-
+/************************ MACROS***********************************************/
 /* Size of the Data Set */
 #define SIZE (40)
-
+#define PRINTING_ROW_LENGHT (10)
+#define PRINTING_TITLE_SEGMENT ("****************************************************************\n")
+#define NO_CHANGES_IN_BUBBLE_SORT (0)
+#define CHANGES_IN_BUBBLE_SORT (1)
 
 
 
@@ -44,10 +47,11 @@ void main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
 
+   print_array(&test[0], (int) SIZE );
 
+   print_statistics(&test[0], (int) SIZE);
 
 }
 
@@ -56,14 +60,48 @@ void main() {
 
 void print_statistics(u_8Bit * u_cptr_to_DataArr, int u_isize_of_array)
 {
-   // Print Array of statistics with size SIZE 
+   u_8Bit u_cstat_aux_value;
+
+   printf("Statistics ");
+   printf(PRINTING_TITLE_SEGMENT );
+
+   u_cstat_aux_value = find_median(u_cptr_to_DataArr, u_isize_of_array);
+
+   printf("Median: %d\n", u_cstat_aux_value);
+
+   u_cstat_aux_value = find_mean(u_cptr_to_DataArr, u_isize_of_array);
+
+   printf("Mean: %d\n", u_cstat_aux_value);
+
+   u_cstat_aux_value = find_maximum(u_cptr_to_DataArr, u_isize_of_array);
+
+   printf("Max Value: %d\n", u_cstat_aux_value);
+
+   u_cstat_aux_value = find_minimum(u_cptr_to_DataArr, u_isize_of_array);
+
+   printf("Min Value: %d\n\n", u_cstat_aux_value);
+
+   printf(PRINTING_TITLE_SEGMENT );
+
 
 }
 
 
 void print_array( u_8Bit * u_cptr_to_DataArr,int u_isize_of_array)
 {
-   // Print Array of Data with size SIZE 
+
+   printf("Data array ");
+   printf(PRINTING_TITLE_SEGMENT );
+
+   for(int j = 0; j<(u_isize_of_array/PRINTING_ROW_LENGHT);j++)
+   {
+      for(int i = 0; i< (PRINTING_ROW_LENGHT); i++ )
+      {
+         printf("%d\t",  *(u_cptr_to_DataArr+i+(j*PRINTING_ROW_LENGHT)) );
+      }
+      printf("\n");
+   }
+   printf("\n");
 
 }
 
@@ -71,35 +109,78 @@ void print_array( u_8Bit * u_cptr_to_DataArr,int u_isize_of_array)
 
 u_8Bit find_median(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
 {
-   // code to find the median
-   return 0;
+   u_8Bit u_cmedian_aux_var;
+
+   sort_array(u_cptr_to_DataArr, int_size_of_array);
+
+   /* median if number of values is an odd number*/
+
+   u_cmedian_aux_var = *(u_cptr_to_DataArr + (int_size_of_array/2-1));
+
+   /* Exception handler if size of array is a pair number*/
+
+   if((int_size_of_array%2) == 0)
+   {
+      u_cmedian_aux_var = u_cmedian_aux_var + *(u_cptr_to_DataArr + (int_size_of_array/2));
+      u_cmedian_aux_var /= 2;
+   }
+
+
+   return u_cmedian_aux_var;
 
 }
 
 
 u_8Bit find_mean(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
 {
-   //Code to find the mean
-   return 0;
+   int u_cmean = 0;
+
+   for(int i= 0; i<int_size_of_array; i++)
+   {
+      u_cmean += *(u_cptr_to_DataArr+i);
+   }
+
+   u_cmean /= int_size_of_array;
+
+   return u_cmean;
 }
 
 
 u_8Bit find_maximum(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
 {
-  //code to find the max value
-   return 0;
+ 
+   return (*u_cptr_to_DataArr);
 }
 
 
 u_8Bit find_minimum(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
 {
-  //code to find the min value
-   return 0;
+   return (*(u_cptr_to_DataArr+int_size_of_array-1));
 }
 
 
 void sort_array(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
 {
-  // code to sort the array
+   u_8Bit u_cswitch_assist_var = 0;
+   u_8Bit u_cchanges_flag; 
+
+
+  do 
+  {
+     u_cchanges_flag = NO_CHANGES_IN_BUBBLE_SORT;
+     for(int i=1; i<int_size_of_array; i++ )
+     {
+        
+        if(*(u_cptr_to_DataArr+i)> *(u_cptr_to_DataArr+i-1))
+        {
+           u_cswitch_assist_var     = *(u_cptr_to_DataArr+i);
+           *(u_cptr_to_DataArr+i)   = *(u_cptr_to_DataArr+i-1);
+           *(u_cptr_to_DataArr+i-1) = u_cswitch_assist_var;
+           u_cchanges_flag = CHANGES_IN_BUBBLE_SORT;
+
+        }
+
+     }
+  } while(  NO_CHANGES_IN_BUBBLE_SORT != u_cchanges_flag );
 
 }
