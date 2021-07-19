@@ -82,7 +82,8 @@ typedef unsigned char u_8Bit;
  * @brief Given an array of data and a length, return the median.
  *
  *    This function takes as an input an array pointer and returns the
- *      median in a char.
+ *      median in a rounded char, if calculated value is greater than .5 
+ *      a ceiling round out is executed.
  *
  * @param <u_8Bit * u_cptr_to_DataArr>  <Pointer to Data Array.>
  * @param <int   u_isize_of_array    >  <1D array dimension.   >
@@ -97,7 +98,8 @@ typedef unsigned char u_8Bit;
  * @brief Given an array of data and a length, returns the mean
  *
  *    This function takes as an input an array pointer and returns the
- *      meam in a char.
+ *      meam in a charif calculated value is greater than .5 
+ *      a ceiling round out is executed.
  *
  * @param <u_8Bit * u_cptr_to_DataArr>  <Pointer to Data Array.>
  * @param <int   u_isize_of_array    >  <1D array dimension.   >

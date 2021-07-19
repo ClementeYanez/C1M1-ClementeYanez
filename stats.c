@@ -51,6 +51,7 @@ void main() {
 
    print_array(&test[0], (int) SIZE );
 
+
    print_statistics(&test[0], (int) SIZE);
 
 }
@@ -61,6 +62,12 @@ void main() {
 void print_statistics(u_8Bit * u_cptr_to_DataArr, int u_isize_of_array)
 {
    u_8Bit u_cstat_aux_value;
+
+
+   sort_array(u_cptr_to_DataArr, u_isize_of_array);
+
+   printf("Sorted ");
+   print_array(u_cptr_to_DataArr,u_isize_of_array);
 
    printf("Statistics ");
    printf(PRINTING_TITLE_SEGMENT );
@@ -109,9 +116,8 @@ void print_array( u_8Bit * u_cptr_to_DataArr,int u_isize_of_array)
 
 u_8Bit find_median(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
 {
-   u_8Bit u_cmedian_aux_var;
+   float u_cmedian_aux_var;
 
-   sort_array(u_cptr_to_DataArr, int_size_of_array);
 
    /* median if number of values is an odd number*/
 
@@ -125,6 +131,12 @@ u_8Bit find_median(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
       u_cmedian_aux_var /= 2;
    }
 
+   if((u_cmedian_aux_var - (char)u_cmedian_aux_var) > .5)
+   {
+      u_cmedian_aux_var++;
+   }
+
+
 
    return u_cmedian_aux_var;
 
@@ -133,7 +145,7 @@ u_8Bit find_median(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
 
 u_8Bit find_mean(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
 {
-   int u_cmean = 0;
+   float u_cmean = 0;
 
    for(int i= 0; i<int_size_of_array; i++)
    {
@@ -141,6 +153,12 @@ u_8Bit find_mean(u_8Bit * u_cptr_to_DataArr, int int_size_of_array)
    }
 
    u_cmean /= int_size_of_array;
+
+   if((u_cmean - (char)u_cmean) > .5)
+   {
+      u_cmean++;
+   }
+
 
    return u_cmean;
 }
